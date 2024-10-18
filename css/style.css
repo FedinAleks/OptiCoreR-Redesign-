@@ -883,10 +883,14 @@ h3 {
     .member_name {
         font-size: 24px;
     }
+    .modal {
+        width: 100%;
+    }
     .modal_content {
         padding: 2vw;
         flex-direction: column;
-        width: 60%;
+        text-align: center;
+        width: 85%;
     }
     .modal_image_member1, .modal_image_member2, .modal_image_member3 {
         background-size: contain;
