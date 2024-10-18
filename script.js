@@ -162,3 +162,20 @@ prevButton.addEventListener('click', () => {
     }
     showSlide(currentSlide);
 });
+
+
+
+// ACTIONS //
+
+// buttons call
+document.querySelectorAll('.button_call, .button_call_main, .button_call_contact').forEach(function(button) {
+    button.addEventListener('click', function() {
+        window.location.href = 'tel:+380123456789';
+    });
+});
+
+// button more detail 
+document.querySelector('.button_moredetails').addEventListener('click', function() {
+    const aboutUsBlock = document.querySelector('.aboutus_block');
+    aboutUsBlock.scrollIntoView({ behavior: 'smooth' });
+});
