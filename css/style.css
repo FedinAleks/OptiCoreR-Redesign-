@@ -401,6 +401,9 @@ h1 {
     .subtitle_mainblock, .goldsubtitle_text {
         font-size: 18px;
     }
+    .social_media {
+        margin-top: 10vw;
+    }
 }
 
 /* ABOUT US */
@@ -547,8 +550,8 @@ h3 {
 .problem {
     display: flex;
     align-items: center;
-    gap: 2vw;
-    padding: 2vw;
+    gap: 3vw;
+    padding: 1vw 3vw;
     border-radius: 5px;
     background-color: #EBEBEB;
 }
@@ -599,6 +602,9 @@ h3 {
     }
 }
 @media (max-width: 425px) {
+    .blocktext_title {
+        font-size: 14px;
+    }
     h3 {
         font-size: 18px;
     }
