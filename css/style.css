@@ -175,7 +175,7 @@ li {
     width: 90%;
     bottom: 30px;
     color: #212121;
-    margin-bottom: 7em;
+    margin-bottom: 10em;
 }
 .button_request_mobile:hover {
     background-color: #D2A042;
@@ -339,7 +339,7 @@ h1 {
     justify-content: center;
     width: 60px;
     height: 60px;
-    background-color: #C9A35B; /* Колір кнопки */
+    background-color: #C9A35B;
     border-radius: 50%;
     position: absolute;
     right: 30px;
@@ -363,7 +363,7 @@ h1 {
   }
   
   .plus_quick_button {
-    stroke: #C9A35B; /* Колір іконки "плюс" */
+    stroke: #C9A35B;
     fill: none;
   }
   
@@ -398,7 +398,7 @@ h1 {
     transform: rotate(135deg);
   }
   .inner-fabs.show + .fab svg {
-    transform: rotate(45deg); /* Повертаємо "плюс" на 45 градусів, щоб він став схожим на хрестик */
+    transform: rotate(45deg);
   }
   
   .fab:before {
@@ -1868,3 +1868,8 @@ footer {
     background-color: transparent;
     border: none;
 }
+
+
+
+/* EDUCATION BLOCK */
+

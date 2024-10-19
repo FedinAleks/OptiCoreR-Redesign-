@@ -238,20 +238,25 @@ prevButton.addEventListener('click', () => {
 
 let startX = 0;
 let endX = 0;
+let isSwiping = false;
 
 // Початок свайпу
 projectsContainer.addEventListener('touchstart', (event) => {
     startX = event.touches[0].clientX;
-    endX = startX;  // Скидаємо значення endX при початку свайпу
+    isSwiping = true;  // Початок свайпу
 });
 
 // Рух пальця по екрану
 projectsContainer.addEventListener('touchmove', (event) => {
-    endX = event.touches[0].clientX;
+    if (isSwiping) {
+        endX = event.touches[0].clientX;
+    }
 });
 
 // Кінець свайпу
 projectsContainer.addEventListener('touchend', () => {
+    if (!isSwiping) return;  // Перевіряємо, чи відбувався свайп
+
     let swipeDistance = startX - endX;
 
     // Якщо свайп був достатньо довгий
@@ -261,20 +266,22 @@ projectsContainer.addEventListener('touchend', () => {
         } else {
             currentSlide = 0;
         }
-        showSlide(currentSlide);
     } else if (swipeDistance < -50) { // свайп вправо, перемикання на попередній слайд
         if (currentSlide > 0) {
             currentSlide--;
         } else {
             currentSlide = totalSlides - 1;
         }
-        showSlide(currentSlide);
     }
-
+    
+    showSlide(currentSlide);
+    
     // Скидаємо значення після завершення свайпу
     startX = 0;
     endX = 0;
+    isSwiping = false;  // Завершення свайпу
 });
+
 
 
 
