@@ -20,9 +20,41 @@ document.getElementById('closeMenu').addEventListener('click', function() {
 
 // QUICK CONTACT //
 
-document.querySelector('.quick-contact').addEventListener('click', function() {
-    this.classList.toggle('active');
-  });
+let fab1 = document.getElementById('fab1');
+let innerFabs = document.getElementsByClassName('inner-fabs')[0];
+
+fab1.addEventListener('click', function() {
+    innerFabs.classList.toggle('show');
+});
+
+document.addEventListener('click', function(e) {
+    if (!fab1.contains(e.target) && !innerFabs.contains(e.target)) {
+        innerFabs.classList.remove('show');
+    }
+});
+
+// quick start actions
+const fab4 = document.getElementById('fab4'); // Telegram
+const fab3 = document.getElementById('fab3'); // Mail
+const fab2 = document.getElementById('fab2'); // Call
+
+//для іконки Telegram
+fab4.addEventListener('click', function() {
+    window.open('https://t.me/your_telegram_username', '_blank'); // Заміни на свій username
+});
+
+//для іконки Mail
+fab3.addEventListener('click', function() {
+    window.location.href = 'mailto:opticorer@gmail.com'; // Заміни на свою пошту
+});
+
+//для іконки Call
+fab2.addEventListener('click', function() {
+    window.location.href = 'tel:+1234567890'; // Заміни на свій номер телефону
+});
+
+
+
 
 
 // ABOUT US (SHOW MORE BTN) //
@@ -95,7 +127,7 @@ window.onload = function() {
 // MODAL TEAM //
 
 document.addEventListener('DOMContentLoaded', function () {
-    const modals = document.querySelectorAll('.modal');
+    const modals = document.querySelectorAll('.modal_team');
     modals.forEach(modal => {
         modal.style.display = 'none';
     });
@@ -116,12 +148,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     closeButtons.forEach(closeBtn => {
         closeBtn.addEventListener('click', function() {
-            this.closest('.modal').style.display = 'none';
+            this.closest('.modal_team').style.display = 'none';
         });
     });
 
     window.addEventListener('click', function(event) {
-        if (event.target.classList.contains('modal')) {
+        if (event.target.classList.contains('modal_team')) {
             event.target.style.display = 'none';
         }
     });
