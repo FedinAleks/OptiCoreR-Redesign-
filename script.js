@@ -1,62 +1,55 @@
 // HEADER FIXED //
 
-// Функція для додавання/видалення прозорості хедеру
+
 window.addEventListener('scroll', function() {
     var header = document.querySelector('header');
-    if (window.scrollY > 50) { // Якщо прокручено більше ніж на 50px
+    if (window.scrollY > 50) {
         header.classList.add('header-scrolled');
     } else {
         header.classList.remove('header-scrolled');
     }
 });
 
-// Функція для закриття мобільного меню
+
 function closeMobileMenu() {
     document.getElementById('mobileMenu').style.display = 'none';
 }
 
-// Функція для прокрутки вгору
+
 function scrollToTop() {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth' // Плавна прокрутка
+        behavior: 'smooth'
     });
 }
 
-// Відкриття мобільного меню при натисканні на бургер-меню
 document.getElementById('burgerMenu').addEventListener('click', function() {
     document.getElementById('mobileMenu').style.display = 'flex';
 });
 
-// Закриття мобільного меню при натисканні на кнопку "закрити"
 document.getElementById('closeMenu').addEventListener('click', closeMobileMenu);
 
-// Закриття мобільного меню при натисканні на кнопку "Надіслати запит"
 const buttonRequestMobile = document.querySelector('.button_request_mobile');
 buttonRequestMobile.addEventListener('click', closeMobileMenu);
 
-// Отримати всі посилання у мобільному меню
 const mobileMenuLinks = document.querySelectorAll('.mobile_menu ul li a');
 
-// Додати обробник подій для кожного посилання
 mobileMenuLinks.forEach(link => {
     link.addEventListener('click', closeMobileMenu);
 });
 
-// Додати обробник події для лого мобільного меню
 const logoMobileHeader = document.querySelector('.logo_mobile_header');
 logoMobileHeader.addEventListener('click', function(event) {
-    event.preventDefault(); // Запобігаємо переходу по лінку, якщо потрібно
-    closeMobileMenu(); // Закрити мобільне меню
-    scrollToTop(); // Прокрутити на початок сторінки
+    event.preventDefault(); 
+    closeMobileMenu(); 
+    scrollToTop(); 
 });
 
 // logo main
-// Додати обробник події для основного лого
 const logo = document.querySelector('.logo');
 logo.addEventListener('click', function(event) {
-    event.preventDefault(); // Запобігаємо переходу по лінку, якщо потрібно
-    scrollToTop(); // Прокрутити на початок сторінки
+    event.preventDefault(); 
+    scrollToTop(); 
 });
 
 
@@ -84,17 +77,17 @@ const fab2 = document.getElementById('fab2'); // Call
 
 //для іконки Telegram
 fab4.addEventListener('click', function() {
-    window.open('https://t.me/your_telegram_username', '_blank'); // Заміни на свій username
+    window.open('https://t.me/your_telegram_username', '_blank'); 
 });
 
 //для іконки Mail
 fab3.addEventListener('click', function() {
-    window.location.href = 'mailto:opticorer@gmail.com'; // Заміни на свою пошту
+    window.location.href = 'mailto:opticorer@gmail.com'; 
 });
 
 //для іконки Call
 fab2.addEventListener('click', function() {
-    window.location.href = 'tel:+1234567890'; // Заміни на свій номер телефону
+    window.location.href = 'tel:+1234567890'; 
 });
 
 
@@ -215,12 +208,14 @@ const projects = document.querySelectorAll('.project');
 let currentSlide = 0;
 const totalSlides = projects.length;
 
+// Показати слайд
 function showSlide(index) {
     const slideWidth = projects[0].clientWidth;
     const offset = -index * slideWidth;
     projectsContainer.style.transform = `translateX(${offset}px)`;
 }
 
+// Події для кнопок "вперед" і "назад"
 nextButton.addEventListener('click', () => {
     if (currentSlide < totalSlides - 1) {
         currentSlide++;
@@ -238,6 +233,44 @@ prevButton.addEventListener('click', () => {
     }
     showSlide(currentSlide);
 });
+
+// Додати підтримку свайпу для мобільних пристроїв
+
+let startX = 0;
+let endX = 0;
+
+// Початок свайпу
+projectsContainer.addEventListener('touchstart', (event) => {
+    startX = event.touches[0].clientX;
+});
+
+// Рух пальця по екрану
+projectsContainer.addEventListener('touchmove', (event) => {
+    endX = event.touches[0].clientX;
+});
+
+// Кінець свайпу
+projectsContainer.addEventListener('touchend', () => {
+    let swipeDistance = startX - endX;
+
+    // Якщо свайп був достатньо довгий
+    if (swipeDistance > 50) { // свайп вліво, перемикання на наступний слайд
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+        } else {
+            currentSlide = 0;
+        }
+        showSlide(currentSlide);
+    } else if (swipeDistance < -50) { // свайп вправо, перемикання на попередній слайд
+        if (currentSlide > 0) {
+            currentSlide--;
+        } else {
+            currentSlide = totalSlides - 1;
+        }
+        showSlide(currentSlide);
+    }
+});
+
 
 
 
