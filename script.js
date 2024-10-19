@@ -1,5 +1,4 @@
 // HEADER FIXED //
-
 window.addEventListener('scroll', function() {
     var header = document.querySelector('header');
     if (window.scrollY > 70) {
@@ -14,6 +13,11 @@ document.getElementById('burgerMenu').addEventListener('click', function() {
 });
 
 document.getElementById('closeMenu').addEventListener('click', function() {
+    document.getElementById('mobileMenu').style.display = 'none';
+});
+
+const buttonRequestMobile = document.querySelector('.button_request_mobile');
+buttonRequestMobile.addEventListener('click', function() {
     document.getElementById('mobileMenu').style.display = 'none';
 });
 
