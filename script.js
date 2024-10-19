@@ -1,25 +1,65 @@
 // HEADER FIXED //
+
+// Функція для додавання/видалення прозорості хедеру
 window.addEventListener('scroll', function() {
     var header = document.querySelector('header');
-    if (window.scrollY > 70) {
+    if (window.scrollY > 50) { // Якщо прокручено більше ніж на 50px
         header.classList.add('header-scrolled');
     } else {
         header.classList.remove('header-scrolled');
     }
 });
 
+// Функція для закриття мобільного меню
+function closeMobileMenu() {
+    document.getElementById('mobileMenu').style.display = 'none';
+}
+
+// Функція для прокрутки вгору
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Плавна прокрутка
+    });
+}
+
+// Відкриття мобільного меню при натисканні на бургер-меню
 document.getElementById('burgerMenu').addEventListener('click', function() {
     document.getElementById('mobileMenu').style.display = 'flex';
 });
 
-document.getElementById('closeMenu').addEventListener('click', function() {
-    document.getElementById('mobileMenu').style.display = 'none';
+// Закриття мобільного меню при натисканні на кнопку "закрити"
+document.getElementById('closeMenu').addEventListener('click', closeMobileMenu);
+
+// Закриття мобільного меню при натисканні на кнопку "Надіслати запит"
+const buttonRequestMobile = document.querySelector('.button_request_mobile');
+buttonRequestMobile.addEventListener('click', closeMobileMenu);
+
+// Отримати всі посилання у мобільному меню
+const mobileMenuLinks = document.querySelectorAll('.mobile_menu ul li a');
+
+// Додати обробник подій для кожного посилання
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
 });
 
-const buttonRequestMobile = document.querySelector('.button_request_mobile');
-buttonRequestMobile.addEventListener('click', function() {
-    document.getElementById('mobileMenu').style.display = 'none';
+// Додати обробник події для лого мобільного меню
+const logoMobileHeader = document.querySelector('.logo_mobile_header');
+logoMobileHeader.addEventListener('click', function(event) {
+    event.preventDefault(); // Запобігаємо переходу по лінку, якщо потрібно
+    closeMobileMenu(); // Закрити мобільне меню
+    scrollToTop(); // Прокрутити на початок сторінки
 });
+
+// logo main
+// Додати обробник події для основного лого
+const logo = document.querySelector('.logo');
+logo.addEventListener('click', function(event) {
+    event.preventDefault(); // Запобігаємо переходу по лінку, якщо потрібно
+    scrollToTop(); // Прокрутити на початок сторінки
+});
+
+
 
 
 // QUICK CONTACT //
