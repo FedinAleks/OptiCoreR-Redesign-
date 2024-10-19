@@ -173,7 +173,9 @@ li {
     text-transform: uppercase;
     font-weight: 600;
     width: 90%;
-    bottom: 80px;
+    bottom: 30px;
+    color: #212121;
+    margin-bottom: 7em;
 }
 .button_request_mobile:hover {
     background-color: #D2A042;

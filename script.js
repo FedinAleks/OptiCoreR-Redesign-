@@ -242,6 +242,7 @@ let endX = 0;
 // Початок свайпу
 projectsContainer.addEventListener('touchstart', (event) => {
     startX = event.touches[0].clientX;
+    endX = startX;  // Скидаємо значення endX при початку свайпу
 });
 
 // Рух пальця по екрану
@@ -269,6 +270,10 @@ projectsContainer.addEventListener('touchend', () => {
         }
         showSlide(currentSlide);
     }
+
+    // Скидаємо значення після завершення свайпу
+    startX = 0;
+    endX = 0;
 });
 
 
