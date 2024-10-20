@@ -2153,3 +2153,18 @@ iframe {
 .main_wrapper {
     margin: 5em 8em 5em 8em;
 }
+@media (max-width: 800px) {
+    .main_wrapper {
+        margin: 5em 5em 5em 5em;
+    }
+}
+@media (max-width: 500px) {
+    .main_wrapper {
+        margin: 5em 3em 5em 3em;
+    }
+}
+@media (max-width: 375px) {
+    .main_wrapper {
+        margin: 5em 2em 5em 2em;
+    }
+}
