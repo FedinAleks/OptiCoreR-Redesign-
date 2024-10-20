@@ -1873,3 +1873,221 @@ footer {
 
 /* EDUCATION BLOCK */
 
+
+.education_part1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4em 8em 0em 8em;
+}
+.education_title {
+    font-family: 'Playfair_Display';
+    font-weight: 400;
+    font-size: 55px;
+    color: #242124;
+}
+.image1_education {
+    background-image: url(../image/education_image1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 150px;
+}
+.education_part2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0em 8em 0em 8em;
+}
+.education_part2 .social_media {
+    margin-top: 0;
+}
+.education_subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.38px;
+    font-size: 18px;
+    width: 485px;
+}
+.button_courses {
+    padding: 1em 3em;
+    background-color: transparent;
+    color: #242124;
+    border: 2px solid #C9A35B;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-left: 40%;
+}
+.button_courses:hover {
+    padding: 1em 3em;
+    background-color: #C9A35B;
+    border: 2px solid #D2A042;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #242124;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(25, 24, 24, 0.5);
+}
+.background_image_education {
+    background-image: url(../image/education_background_image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 20vw;
+    margin-top: 1em;
+}
+
+.courses_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
+    padding-top: 5em;
+    margin: 0em 8em 10em 8em;
+}
+
+.course {
+    background-color: #EBEBEB;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1.5em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 2em); /* 3 колонки */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%; /* Однакова висота */
+}
+
+.course_bottom {
+    margin-top: auto;
+}
+
+.course_title {
+    font-family: 'Playfair_Display';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px solid #C9A35B;
+    padding-bottom: 1em;
+}
+
+.course_maintext, .course_semiboldtext {
+    margin: 0.5em 0;
+}
+.course_semiboldtext {
+    font-weight: 500;
+}
+.course_bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.course_button {
+    margin-top: 1em;
+    padding: 0.8em 1.2em;
+    background-color: transparent;
+    color: #242124;
+    border: 1px solid #C9A35B;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: small;
+    font-weight: 500;
+}
+
+.course_button:hover {
+    background-color: #D2A042;
+}
+
+/* Респонсивність */
+@media (max-width: 1024px) {
+    .course {
+        flex: 1 1 calc(50% - 2em); /* 2 колонки на середніх екранах */
+    }
+    .education_title {
+        font-size: 36px;
+    }
+    .education_subtitle {
+        font-size: 16px;
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .education_part1 {
+        margin: 4em 5em 0em 5em;
+    }
+    .image1_education {
+        display: none;
+    }
+    .education_part2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .course {
+        flex: 1 1 100%; /* 1 колонка на маленьких екранах */
+    }
+    .education_title {
+        text-align: center;
+        font-size: 32px;
+    }
+    .education_subtitle {
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+    }
+    .button_courses {
+        margin-left: 35%;
+    }
+}
+@media (max-width: 575px) {
+    .courses_list {
+        margin: 0em 2em 10em 2em;
+    }
+    .button_courses {
+        margin-left: 28%;
+    }
+}
+@media (max-width: 475px) {
+    .education_part1 {
+        margin: 4em 2em 0em 2em;
+    }
+    .education_title {
+        font-size: 28px;
+        width: 100%;
+    }
+    .education_subtitle {
+        font-size: 12px;
+        width: 80vw;
+    }
+    .button_courses {
+        margin-left: 25%;
+    }
+    .courses_list {
+        margin: 0em 2em 10em 2em;
+    }
+}
+@media (max-width: 400px) {
+    .education_subtitle {
+        font-size: 12px;
+    }
+    .button_courses {
+        margin-left: 20%;
+    }
+    .courses_list {
+        margin: 0em 2em 10em 2em;
+    }
+}
+
+
