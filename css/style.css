@@ -2091,3 +2091,60 @@ footer {
 }
 
 
+/* BLOG */
+
+.main_section_blog {
+    display: flex;
+    margin: 4em 8em 0em 8em;
+    gap: 3em;
+}
+.blog_title {
+    font-family: 'Playfair_Display';
+    font-weight: 500;
+    font-size: 36px;
+    color: #242124;
+}
+.posts_section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.post, .podcast {
+    display: flex;
+    flex-direction: column;
+    background-color: #EBEBEB;
+    padding: 1em 2em;
+    border-radius: 5px;
+}
+.podcasts_section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 1024px) {
+    .main_section_blog {
+        display: flex;
+        flex-direction: column;
+        margin: 4em 6em 0em 6em;
+    }
+}
+@media (max-width: 800px) {
+    .main_section_blog {
+        margin: 4em 4em 0em 4em;
+    }
+}
+@media (max-width: 500px) {
+    .main_section_blog {
+        margin: 4em 3em 0em 3em;
+    }
+}
+@media (max-width: 425px) {
+    .main_section_blog {
+        margin: 4em 2em 10em 2em;
+    }
+}
