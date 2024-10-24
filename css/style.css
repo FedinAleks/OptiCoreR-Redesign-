@@ -511,6 +511,7 @@ h2 {
     background-image: url(../image/aboutus_image.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     border-radius: 5px;
 }
 
