@@ -70,6 +70,7 @@ header {
     height: 50px;
     cursor: pointer;
 }
+
 .nav_menu {
     display: flex;
     justify-content: space-between;
@@ -77,6 +78,7 @@ header {
 li {
     list-style: none;
     padding-right: 2em;
+    position: relative;
 }
 .nav_menu a {
     text-decoration: none;
@@ -87,6 +89,38 @@ li {
 }
 .nav_menu a:hover {
     color: #C9A35B;
+}
+.services_submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 1em;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.services_submenu li {
+    width: 100%;
+}
+
+.services_submenu li a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+}
+
+.services_dropdown:hover .services_submenu {
+    display: block;
+}
+
+.services_submenu li a:hover {
+    background-color: #f0f0f0;
 }
 
 .button_request {
@@ -1207,7 +1241,22 @@ footer {
     justify-content: space-between;
 }
 .footer_content_adress_text {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
     color: #EBEBEB;
+}
+.footer_content_adress_text a {
+    font-family: 'Roboto';
+    font-weight: 400;
+    color: #EBEBEB;
+    text-decoration: none;
+}
+.footer_content_adress_text_gold {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-style: normal;
+    color: #C9A35B;
 }
 .footer__document {
     text-decoration: none;
