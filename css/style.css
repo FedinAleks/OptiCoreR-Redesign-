@@ -541,7 +541,7 @@ h2 {
 }
 
 .aboutus_image {
-    width: 100%;
+    width: 120%;
     height: auto;
     background-image: url(../image/aboutus_image.png);
     background-size: cover;
@@ -775,37 +775,58 @@ h3 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 2vw;
+    gap: 2%;
 }
+
 .member_card {
-    text-align: center;
+    width: 80%;
+    height: 50vw; /* Висота відповідає зображенням */
+    perspective: 1000px; /* Додає 3D-перспективу */
+    cursor: pointer; /* Змінює курсор на "руку" */
+    position: relative;
+}
+
+.member_card_inner {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.member_card_inner.flipped {
+    transform: rotateY(180deg); /* Додає переворот */
+}
+
+.member_card_front,
+.member_card_back {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    backface-visibility: hidden; /* Ховає зворотню сторону, коли її не видно */
+    border-radius: 5px;
+    z-index: 0;
+}
+
+/* Стилі для передньої частини */
+.member_card_front {
     background-color: #EBEBEB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     padding: 2vw;
-    border-radius: 5px;
-    width: 100%;
+    text-align: center;
 }
-.image_member1 {
-    background-image: url(../image/Janna_Kudrytska.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 30vw;
-    border-radius: 5px;
-}
-.image_member2 {
-    background-image: url(../image/Inna_Grygorenko.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 30vw;
-    border-radius: 5px;
-}
+
+.image_member1,
+.image_member2,
 .image_member3 {
-    background-image: url(../image/Iryna_Ushakova.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     width: 100%;
-    height: 30vw;
+    height: 100%;
     border-radius: 5px;
 }
 
@@ -816,99 +837,70 @@ h3 {
     font-size: 24px;
     border-bottom: 1px solid #C9A35B;
 }
-.button_member_detail {
-    margin-top: 1vw;
-    padding: 1em 3em;
-    background-color: transparent;
-    color: #242124;
-    border: 2px solid #C9A35B;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-.button_member_detail:hover {
-    background-color: #C9A35B;
-    border: 2px solid #C9A35B;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(25, 24, 24, 0.5);
-}  
-
-/* MODAL TEAM */
-
-.modal_team {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+.icon_hint {
+    position: absolute;
+    bottom: 10px; /* Відступ віднизу */
+    right: 10px; /* Відступ справа */
+    background-color: rgba(255, 255, 255, 0.8); /* Прозорий фон */
+    border-radius: 50%; /* Округла форма */
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7; /* Легка прозорість */
 }
-.modal_content {
-    background-color: #EBEBEB;
-    padding: 1vw 2vw;
-    border-radius: 10px;
-    width: 70%;
-    position: relative;
+
+.icon_hint:hover {
+    transform: scale(1.2); /* Збільшення при наведенні */
+    opacity: 1; /* Повна видимість */
+}
+
+
+/* Стилі для задньої частини */
+.member_card_back {
+    background-color: #C9A35B;
+    color: #ffffff;
+    transform: rotateY(180deg);
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 3vw;
+    padding: 2vw;
 }
-.close_modal_icon {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
+
+.member_card_back p {
+    margin: 1vw 0;
+    text-align: center;
 }
-.modal_image_member1 {
+.image_member1 {
     background-image: url(../image/Janna_Kudrytska.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     width: 100%;
-    height: 35vw;
     border-radius: 5px;
 }
-.modal_image_member2 {
+.image_member2 {
     background-image: url(../image/Inna_Grygorenko.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     width: 100%;
-    height: 35vw;
     border-radius: 5px;
 }
-.modal_image_member3 {
+.image_member3 {
     background-image: url(../image/Iryna_Ushakova.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     width: 100%;
-    height: 35vw;
     border-radius: 5px;
 }
-.modal_member_name {
+
+.member_name {
+    padding: 1vw;
     font-family: 'Playfair_Display';
-    font-weight: 600;
-    font-style: normal;
-    font-size: 36px;
-    border-bottom: 1px solid #C9A35B;
-    padding-bottom: 1vw;
-}
-.modal_main_text_semibold {
-    font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    letter-spacing: 0.38px;
-}
-.modal_main_text_regular {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.38px;
+    font-size: 24px;
+    border-bottom: 1px solid #C9A35B;
 }
 
 
@@ -916,84 +908,90 @@ h3 {
     .member_card {
         padding: 1vw;
     }
-    .modal_content_text {
-        justify-content: center;
-    }
+    .member_card_front,
+    .member_card_back {
+        width: 90%;
+        height: 130%;
+}
 }
 @media (max-width: 860px) {
+    .members_container {
+        gap: 1vw;
+    }
+    .member_card_front,
+    .member_card_back {
+        height: 130%;
+}
+    .member_card {
+        width: 100%;
+        height: 70vw;
+    }
     .member_name {
         font-size: 20px;
     }
-    .modal_content {
-        width: 90%;
+}
+@media (min-width: 769px) {
+    .member_card:hover .member_card_inner {
+        transform: rotateY(180deg); /* Переворот картки на десктопах */
     }
 }
 @media (max-width: 720px) {
     .members_container {
         flex-wrap: wrap;
+        gap: 7vw;
     }
-    .image_member1, .image_member2, .image_member3 {
-        height: 80vw;
-    }
-    .button_member_detail {
-        width: 100%;
-    }
-    .modal_image_member1, .modal_image_member2, .modal_image_member3 {
-        width: 150vw;
-        height: 50vw;
-    }
-    .modal_member_name {
-        font-size: 24px;
-    }
-    .modal_main_text_semibold, .modal_main_text_regular {
-        font-size: 14px;
+    .member_card {
+        width: 90%;
+        height: 100vw;
     }
 }
 @media (max-width: 500px) {
     .member_name {
         font-size: 18px;
     }
-    .modal_main_text_semibold, .modal_main_text_regular {
-        font-size: 12px;
-    }
 }
 @media (max-width: 425px) {
     .members_container {
         display: flex;
-        flex-direction: column;
-        gap: 2vw;
-    }
-    .close_modal_icon {
-        top: 5px;
-        right: 10px;
+        flex-direction: column;   
     }
     .member_card {
         padding: 2vw 1vw;
     }
-    .image_member1, .image_member2, .image_member3 {
-        height: 80vw;
+    .member_card_front,
+    .member_card_back {
+        position: absolute;
+        width: 100%;
+        height: 130%;
+        backface-visibility: hidden; /* Ховає зворотню сторону, коли її не видно */
+        border-radius: 5px;
+        z-index: 0;
     }
+    .image_member1,
+    .image_member2,
+    .image_member3 {
+        background-size: contain;
+}
     .member_name {
         font-size: 24px;
     }
-    .modal_team {
+}
+@media (max-width: 325px) {
+    .members_container {
+            display: flex;
+            flex-direction: column;
+            gap: 5vw;           
+    }
+    .member_card {
+        height: 100vw;
+        padding: 2vw 1vw;
+    }
+    .image_member1,
+    .image_member2,
+    .image_member3 {
         width: 100%;
-    }
-    .modal_content {
-        padding: 2vw;
-        flex-direction: column;
-        text-align: center;
-        width: 85%;
-    }
-    .modal_image_member1, .modal_image_member2, .modal_image_member3 {
-        background-size: contain;
-        width: 90vw;
-        height: 70vw;
-    }
-    .modal_content_text {
-        padding-left: 5vw;
-        padding-right: 5vw;
-    }
+        height: 100vw;
+}
 }
 
 /* HOW WE WORK */
@@ -1171,6 +1169,8 @@ h3 {
 .contact_image {
     background-image: url(../image/contact_image.png);
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -1212,7 +1212,7 @@ h3 {
     }
     .contact_image {
         width: 100%;
-        height: 40vw;
+        height: 70vw;
     }
 }
 @media (max-width: 425px) {
@@ -1918,6 +1918,9 @@ footer {
 .btn__close {
     background-color: transparent;
     border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 

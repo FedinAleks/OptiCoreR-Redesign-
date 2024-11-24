@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бізнес-консультації</title>
+
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="icon" href="../image/LOGO_blank.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="wrapper_header">
+            <img class="logo" src="../image/Logo.png">
+            <nav>
+                <ul class="nav_menu">
+                    <li><a href="#about">Про нас</a></li>
+                    <li class="services_dropdown">
+                        <a href="#services">Послуги</a>
+                        <ul class="services_submenu">
+                            <li><a href="#consulting">Бізнес-консультації</a></li>
+                            <li><a href="#analysis">Аналіз бізнесу</a></li>
+                            <li><a href="#audit">Аудит бізнес-процесів</a></li>
+                            <li><a href="#optimization">Оптимізація бізнес-процесів</a></li>
+                            <li><a href="#franchise">Запуск бізнесу по франшизі</a></li>
+                            <li><a href="#finance">Розробка фінансових моделей і бізнес-планів</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./education.html">Академія</a></li>
+                    <li><a href="./blog.html">Блог</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+            <button  class="button_request" type="button" data-modal-open>Надіслати запит</button>
+
+            <div class="burger_menu" id="burgerMenu">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.66667 30H33.3333C34.25 30 35 29.25 35 28.3333C35 27.4167 34.25 26.6667 33.3333 26.6667H6.66667C5.75 26.6667 5 27.4167 5 28.3333C5 29.25 5.75 30 6.66667 30ZM6.66667 21.6667H33.3333C34.25 21.6667 35 20.9167 35 20C35 19.0833 34.25 18.3333 33.3333 18.3333H6.66667C5.75 18.3333 5 19.0833 5 20C5 20.9167 5.75 21.6667 6.66667 21.6667ZM5 11.6667C5 12.5833 5.75 13.3333 6.66667 13.3333H33.3333C34.25 13.3333 35 12.5833 35 11.6667C35 10.75 34.25 10 33.3333 10H6.66667C5.75 10 5 10.75 5 11.6667Z" fill="#C9A35B"/>
+                </svg>
+            </div>
+        </div>
+
+
+        <!-- Модальне вікно -->
+    <div class="backdrop is-hidden" data-modal="">
+        <div class="modal">
+        <p class="form__title">Замовити бізнес-консультацію</p>
+    
+        <form class="form" autocomplete="on">
+            <div class="form__left-part">
+            <div class="form__group">
+                <label class="form__group-label" for="name">Ваше Ім‘я</label>
+                <input type="text" name="name" class="form__group-input" id="name" placeholder="  " maxlength="40" required>
+                <svg class="form__group-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><g fill="none" stroke="#C9A35B"><path stroke-linejoin="round" d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><circle cx="12" cy="7" r="3"/></g></svg>
+            </div>
+            <div class="form__group">
+                <label class="form__group-label" for="tel">Номер телефону</label>
+                <input type="tel" name="tel" class="form__group-input" id="tel" placeholder="  " pattern="\+380[0-9]{9}" value="+380" required>
+                <svg class="form__group-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#C9A35B" d="M19.5 22a1.5 1.5 0 0 0 1.5-1.5V17a1.5 1.5 0 0 0-1.5-1.5c-1.17 0-2.32-.18-3.42-.55a1.51 1.51 0 0 0-1.52.37l-1.44 1.44a14.77 14.77 0 0 1-5.89-5.89l1.43-1.43c.41-.39.56-.97.38-1.53c-.36-1.09-.54-2.24-.54-3.41A1.5 1.5 0 0 0 7 3H3.5A1.5 1.5 0 0 0 2 4.5C2 14.15 9.85 22 19.5 22M3.5 4H7a.5.5 0 0 1 .5.5c0 1.28.2 2.53.59 3.72c.05.14.04.34-.12.5L6 10.68c1.65 3.23 4.07 5.65 7.31 7.32l1.95-1.97c.14-.14.33-.18.51-.13c1.2.4 2.45.6 3.73.6a.5.5 0 0 1 .5.5v3.5a.5.5 0 0 1-.5.5C10.4 21 3 13.6 3 4.5a.5.5 0 0 1 .5-.5"/></svg>
+            </div>  
+            <div class="form__group">
+                <label class="form__group-label" for="email">Ваша електронна пошта</label>
+                <input type="email" name="email" class="form__group-input" id="email" placeholder=" ">
+                <svg class="form__group-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#C9A35B" d="M4.616 19q-.691 0-1.153-.462T3 17.384V6.616q0-.691.463-1.153T4.615 5h14.77q.69 0 1.152.463T21 6.616v10.769q0 .69-.463 1.153T19.385 19zM12 12.116L4 6.885v10.5q0 .269.173.442t.443.173h14.769q.269 0 .442-.173t.173-.443v-10.5zM12 11l7.692-5H4.308zM4 6.885V6v11.385q0 .269.173.442t.443.173H4z"/></svg>        
+            </div>
+            <div class="form__group mobile-none">
+                <label class="form__group-label" for="company">Назва компанії</label>
+                <input type="text" name="company" class="form__group-input" id="company" placeholder=" ">
+            </div>
+            </div>  
+            <div class="form__right-part form__group">
+            <label class="form__group-label" for="request">Напишіть коротко суть Вашого звернення</label>
+            <textarea class="form__group-textarea" name="comment" rows="20" id="request" placeholder=" "></textarea>
+            </div>
+        </form>
+    
+        <form class="form__agreement" autocomplete="off">
+            <label class="form__agreement-checkbox" for="policy">
+                <input class="checkbox" type="checkbox" name="agreement" id="policy" value="Даю згоду на обробку персональних даних згідно Політики конфіденційності">
+                <span class="agreement">Я погоджуюся на обробку моїх персональних даних відповідно до
+                <a href="./privacy-notice.html" class="agreement__link">Політики конфіденційності</a>
+                та
+                <a href="./terms-of-use.html" class="agreement__link">Умов використання</a>
+                </span>
+                
+                <svg class="form__agreement-checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="white" d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"/></svg>
+            </label>
+
+            <div id="name-error" class="form-error is-hidden">Ім’я є обов’язковим</div>
+            <div id="tel-error" class="form-error is-hidden">Введіть дійсний номер телефону (формат: +380XXXXXXXXX)</div>
+            <div id="email-error" class="form-error is-hidden">Введіть дійсну електронну пошту</div>
+            <div id="policy-error" class="form-error is-hidden">Ви повинні погодитися на обробку персональних даних</div>
+            
+            <button type="submit" class="btn__send">Відправити</button>
+        </form>
+    
+        <button type="button" class="btn__close" data-modal-close="">
+            <svg class="close_modal_icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 36 36"><path fill="#C9A35B" d="m19.41 18l8.29-8.29a1 1 0 0 0-1.41-1.41L18 16.59l-8.29-8.3a1 1 0 0 0-1.42 1.42l8.3 8.29l-8.3 8.29A1 1 0 1 0 9.7 27.7l8.3-8.29l8.29 8.29a1 1 0 0 0 1.41-1.41Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="none" d="M0 0h36v36H0z"/></svg>
+        </button>
+        </div>
+    </div>
+    <div id="success-message" class="funds-success-message-container is-hidden">
+        <div class="funds-checkmark-text-container">
+        <div class="funds-checkmark-container">
+            <svg class="funds-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="funds-checkmark-circle" cx="26" cy="26" r="25" fill="none"/><path class="funds-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg> 
+            
+            <div class="funds-display-on-ie">
+            <svg class="funds-ie-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="funds-ie-checkmark-circle" cx="26" cy="26" r="25" fill="none"/><path class="funds-ie-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg> 
+            </div>
+        </div>          
+        <p class="funds-success-done-text">Успішно!</p>
+        </div>        
+        <div class="funds-success-message">    
+        <p class="success_mediumtext">Заявка відравлена</h2>
+        <p class="success_smalltext">Дякуємо за ваше звернення! Наш консультант невдовзі зв'яжеться з вами для надання консультації.</p>
+        </div>
+    </div>
+    <div id="global-error" class="global-error"></div>
+    <!-- Модальне вікно end -->
+
+
+    </header>
+    <div class="mobile_menu" id="mobileMenu">
+        <div class="mobile_header">
+            <img class="logo_mobile_header" src="./image/Logo.png">
+            <button class="close_menu" id="closeMenu">
+                <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.5 24.7357L14.6749 32.5608C14.3821 32.8536 14.0095 33 13.557 33C13.1046 33 12.7319 32.8536 12.4392 32.5608C12.1464 32.2681 12 31.8954 12 31.443C12 30.9905 12.1464 30.6179 12.4392 30.3251L20.2643 22.5L12.4392 14.6749C12.1464 14.3821 12 14.0095 12 13.557C12 13.1046 12.1464 12.7319 12.4392 12.4392C12.7319 12.1464 13.1046 12 13.557 12C14.0095 12 14.3821 12.1464 14.6749 12.4392L22.5 20.2643L30.3251 12.4392C30.6179 12.1464 30.9905 12 31.443 12C31.8954 12 32.2681 12.1464 32.5608 12.4392C32.8536 12.7319 33 13.1046 33 13.557C33 14.0095 32.8536 14.3821 32.5608 14.6749L24.7357 22.5L32.5608 30.3251C32.8536 30.6179 33 30.9905 33 31.443C33 31.8954 32.8536 32.2681 32.5608 32.5608C32.2681 32.8536 31.8954 33 31.443 33C30.9905 33 30.6179 32.8536 30.3251 32.5608L22.5 24.7357Z" fill="#C9A35B"/>
+                </svg>
+            </button>
+        </div>
+        <ul>
+            <li><a href="#about">Про нас</a></li>
+            <li><a href="#services">Послуги</a></li>
+            <li><a href="./education.html">Академія</a></li>
+            <li><a href="./blog.html">Блог</a></li>
+            <li><a href="#contact">Контакти</a></li>
+        </ul>
+        <button  class="button_request_mobile" type="button" data-modal-open>Надіслати запит</button>
+    </div>
+
+
+
+    <script src="../js/modal.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

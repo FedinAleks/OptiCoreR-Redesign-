@@ -158,43 +158,21 @@ window.onload = function() {
     }
 }
 
+// TEAM CARD (MOB HOVER)
 
+document.addEventListener("DOMContentLoaded", () => {
+    const memberCards = document.querySelectorAll(".member_card");
 
-
-// MODAL TEAM //
-
-document.addEventListener('DOMContentLoaded', function () {
-    const modals = document.querySelectorAll('.modal_team');
-    modals.forEach(modal => {
-        modal.style.display = 'none';
-    });
-
-    const detailButtons = document.querySelectorAll('.button_member_detail');
-
-    detailButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            let modalId = this.getAttribute('data-modal');
-            let modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'flex';
-            }
+    memberCards.forEach((card) => {
+        card.addEventListener("click", () => {
+            const innerCard = card.querySelector(".member_card_inner");
+            innerCard.classList.toggle("flipped"); // Переключає клас для перевертання
         });
-    });
-
-    const closeButtons = document.querySelectorAll('.close_modal_icon');
-
-    closeButtons.forEach(closeBtn => {
-        closeBtn.addEventListener('click', function() {
-            this.closest('.modal_team').style.display = 'none';
-        });
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target.classList.contains('modal_team')) {
-            event.target.style.display = 'none';
-        }
     });
 });
+
+
+
 
 
 // SLIDER PROJECTS //
