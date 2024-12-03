@@ -267,6 +267,7 @@ h1 {
     font-size: 64px;
     color: #FFFFFF;
     text-align: center;
+    margin-top: 2em;
 }
 .goldh1_text {
     font-family: 'Playfair_Display';
@@ -779,6 +780,14 @@ h3 {
     cursor: pointer;
 }
 
+@media (max-width: 1350px) {
+    .service_description_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5vw;
+    }
+}
 @media (max-width: 835px) {
     .service_content {
         display: flex;
@@ -787,6 +796,11 @@ h3 {
     .services_image {
         width: 100%;
         height: 60vw;
+    }
+}
+@media (max-width: 640px) {
+    .button_service_description {
+        width: 100%;
     }
 }
 
@@ -2345,6 +2359,36 @@ iframe {
 .service_form_title {
     border-bottom: 1px solid #C9A35B;
     width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1024px) {
+    .content_services_wrapper {
+        margin: 2em 5em;
+    }
+    .consultation_content_image1 {
+        width: 160%;
+    }
+    .content_consultation3 {
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+    }
+    .consultation_content_image2 {
+        width: 100%;
+        height: 50vw;
+    }
+    
+}
+@media (max-width: 800px) {
+    .consultation_content_image1 {
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    .content_services_wrapper {
+        margin: 2em 2em;
+    }
 }
 
 
@@ -2389,6 +2433,17 @@ iframe {
 .analysis_content_block3 h2 {
     text-align: center;
 }
+@media (max-width: 1200px) {
+    .analysis_content_block2 {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .analysis_content_image2 {
+        width: 100%;
+        height: 50vw;
+    }
+}
 
 
 
@@ -2429,6 +2484,25 @@ iframe {
     flex-direction: column;
     gap: 1em;
 }
+@media (max-width: 1000px) {
+    .content_audit1 {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    .audit_image1 {
+        width: 100%;
+        height: 30vw;
+        flex: none;
+    }
+}
+@media (max-width: 475px) {
+    .audit_image1 {
+        width: 100%;
+        height: 50vw;
+        flex: none;
+    }
+}
 
 
 /* FINANCIAL MODELLING*/
@@ -2446,18 +2520,38 @@ iframe {
     align-items: center;
     text-align: center;
 }
+.content_modeling1 {
+    display: flex;
+    gap: 3em;
+}
 .modeling_block1_image {
     background-image: url(../image/finance_modeling_block1.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 40%;
+    width: 500%;
     height: auto;
     border-radius: 5px;
+}
+@media (max-width: 1250px) {
+    .content_modeling1 {
+        display: flex;
+        flex-direction: column;
+    }
+    .modeling_block1_image {
+        width: 100%;
+        height: 50vw;
+    }
 }
 
 
 /* BUSINESS PLAN*/
+.content_business_plan_wrapper {
+    margin: 2em 8em;
+}
+.content_business_plan_wrapper h2{
+    text-align: center;
+}
 .main_block_business_plan {
     background-image: url(../image/business_plan_main_img.png);
     background-repeat: no-repeat;
@@ -2475,25 +2569,36 @@ iframe {
     display: flex;
     gap: 2em;
 }
-.business_plan_content_image1 {
-    background-image: url(../image/business_plan_block1_img.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
 .business_plan_content_image2 {
     background-image: url(../image/business_plan_block1_img.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 100%;
+    width: 150%;
     height: auto;
     border-radius: 5px;
 }
 
+@media (max-width: 1250px) {
+    .content_business_plan {
+        display: flex;
+        flex-direction: column;
+    }
+    .business_plan_content_image2 {
+        width: 100%;
+        height: 40vw;
+    }
+}
+@media (max-width: 1024px) {
+    .content_business_plan_wrapper {
+        margin: 2em 5em;
+    }
+}
+@media (max-width: 600px) {
+    .content_business_plan_wrapper {
+        margin: 2em 2em;
+    }
+}
 
 /* FRANCHISE */
 .main_block_franchise {
@@ -2503,6 +2608,7 @@ iframe {
     background-position: center;
     width: 100%;
     height: auto;
+    text-align: center;
 }
 .content_franchise1 {
     display: flex;
@@ -2526,7 +2632,7 @@ iframe {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 30%;
+    width: 80%;
     height: auto;
     border-radius: 5px;
 }
@@ -2535,9 +2641,38 @@ iframe {
     flex-direction: column;
     width: 90%;
 }
+@media (max-width: 1200px) {
+    .content_franchise1 {
+        display: flex;
+        flex-direction: column;
+    }
+    .franchise_block1_image {
+        width: 100%;
+        height: 50vw;
+    }
+}
+@media (max-width: 900px) {
+    .content_franchise2 {
+        display: flex;
+        flex-direction: column;
+    }
+    .franchise_block2_image {
+        width: 100%;
+        height: 70vw;
+    }
+}
 
 
 /* TRAININGS AND LEARNING*/
+.content_trainings_wrapper {
+    margin: 2em 8em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+.content_trainings_wrapper h2 {
+    text-align: center;
+}
 .main_block_trainings {
     background-image: url(../image/trainings_main_img.png);
     background-repeat: no-repeat;
@@ -2545,6 +2680,7 @@ iframe {
     background-position: center;
     width: 100%;
     height: auto;
+    text-align: center;
 }
 .trainings_topics_section {
     display: flex;
@@ -2561,8 +2697,56 @@ iframe {
     display: flex;
     align-items: center;
     gap: 2vw;
-    padding: 1vw;
     background-color: #EBEBEB;
     border-radius: 5px;
     width: 100%;
+}
+.format_training_content {
+    padding: 1vw;
+}
+.content_trainings3 {
+    display: flex;
+    gap: 2em;
+}
+.trainings_content_image2 {
+    background-image: url(../image/trainings_content_image2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 70%;
+    height: auto;
+    border-radius: 5px;
+}
+@media (max-width: 1300px) {
+    .content_trainings3 {
+        flex-direction: column;
+    }
+    .trainings_content_image2 {
+        width: 100%;
+        height: 40vw;
+    }
+}
+@media (max-width: 1024px) {
+    .content_trainings_wrapper {
+        margin: 2em 5em;
+    }
+}
+@media (max-width: 850px) {
+    .trainings_topics_section {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+@media (max-width: 750px) { 
+    .format_trainings_section {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+@media (max-width: 600px) {
+    .content_trainings_wrapper {
+        margin: 2em 2em;
+    }
 }
