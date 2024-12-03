@@ -54,6 +54,25 @@ logo.addEventListener('click', function(event) {
 
 
 
+// MAIN BUTTONS //
+
+// Додаємо функціональність дзвінка
+document.querySelector('.button_call').addEventListener('click', () => {
+    window.location.href = 'tel:+1234567890'; // Замініть номер на потрібний
+});
+
+// Додаємо плавний перехід до блоку
+document.querySelector('.button_moredetails').addEventListener('click', () => {
+    const aboutBlock = document.querySelector('#about'); // Знаходимо блок #about
+    if (aboutBlock) {
+        aboutBlock.scrollIntoView({ behavior: 'smooth' }); // Плавно прокручуємо до блоку
+    }
+});
+
+
+
+
+
 
 // QUICK CONTACT //
 
@@ -158,6 +177,25 @@ window.onload = function() {
     }
 }
 
+
+
+// BUTTON SERVICE DESCRIPTION //
+
+
+document.querySelectorAll('.button_service_description').forEach(button => {
+
+    button.addEventListener('click', () => {
+        const url = button.getAttribute('data-url'); 
+        if (url) {
+            window.open(url, '_blank');
+        } else {
+            console.error('URL не вказано для цієї кнопки');
+        }
+    });
+});
+
+
+
 // TEAM CARD (MOB HOVER)
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -166,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     memberCards.forEach((card) => {
         card.addEventListener("click", () => {
             const innerCard = card.querySelector(".member_card_inner");
-            innerCard.classList.toggle("flipped"); // Переключає клас для перевертання
+            innerCard.classList.toggle("flipped"); 
         });
     });
 });

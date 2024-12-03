@@ -737,6 +737,33 @@ h3 {
 .service.active .service_title {
     border-bottom: 1px solid #C9A35B;
 }
+.service_description_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vw;
+}
+.button_service_description {
+    padding: 1em 3em;
+    background-color: transparent;
+    color: #242124;
+    border: 2px solid #C9A35B;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+.button_service_description:hover {
+    padding: 1em 3em;
+    background-color: #C9A35B;
+    border: 2px solid #D2A042;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #242124;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(25, 24, 24, 0.5);
+}
 
 .service {
     background-color: #EBEBEB;
@@ -2221,4 +2248,321 @@ iframe {
     .main_wrapper {
         margin: 5em 2em 5em 2em;
     }
+}
+
+
+
+/* BUSINESS CONSULTATION PAGE */
+
+.main_block_consultation {
+    background-image: url(../image/main_block_bussiness_consultation.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.content_services_wrapper {
+    margin: 9em 8em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+.content_services_wrapper h2 {
+    text-align: center;
+}
+.content_consultation1 {
+    display: flex;
+    justify-content: space-around;
+    gap: 3em;
+}
+.consultation1_textblock {
+    display: flex;
+    flex-direction: column;
+    gap: 0em;
+    text-align: left;
+}
+.services_main_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.38px;
+    font-size: 18px;
+}
+.services_main_list li {
+    list-style-type: circle;
+}
+.consultation_content_image1 {
+    background-image: url(../image/consultation_content_img1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.content_consultation2 {
+    text-align: left;
+}
+.content_consultation3 {
+    display: flex;
+    gap: 3em;
+}
+.consultation_content_image2 {
+    background-image: url(../image/consultation_content_img2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.content_consultation3_blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: left;
+}
+.service_form {
+    border-radius: 5px;
+    background-color: #EBEBEB;
+}
+.service_form_textpart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 2vw 3vw;
+}
+.service_form_title {
+    border-bottom: 1px solid #C9A35B;
+    width: 100%;
+}
+
+
+
+/* BUSINESS ANALYSIS*/
+
+.main_block_business_analysis {
+    background-image: url(../image/busisness_analysis_main_image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.analysis_content_block1 {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.analysis_content_block2 {
+    display: flex;
+    gap: 1em;
+}
+.analysis_content_image2 {
+    background-image: url(../image/business_analy_image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.analysis_content_block3 {
+    text-align: left;
+}
+.analysis_content_block3 h2 {
+    text-align: center;
+}
+
+
+
+/* BUSINESS AUDIT*/
+
+.main_block_audit_business {
+    background-image: url(../image/business_audit_main_image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.content_audit1 {
+    display: flex;
+    gap: 3em;
+}
+.audit_image1 {
+    background-image: url(../image/audit_block1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    flex: 1;
+}
+.audit_content_text {
+    flex: 1;
+}
+.content_audit2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+/* FINANCIAL MODELLING*/
+
+.main_block_financial_modeling {
+    background-image: url(../image/finance_modeling_main_image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.modeling_block1_image {
+    background-image: url(../image/finance_modeling_block1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 40%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+/* BUSINESS PLAN*/
+.main_block_business_plan {
+    background-image: url(../image/business_plan_main_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.content_business_plan {
+    display: flex;
+    gap: 2em;
+}
+.business_plan_content_image1 {
+    background-image: url(../image/business_plan_block1_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.business_plan_content_image2 {
+    background-image: url(../image/business_plan_block1_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+/* FRANCHISE */
+.main_block_franchise {
+    background-image: url(../image/franchise_main_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+}
+.content_franchise1 {
+    display: flex;
+    gap: 2em;
+}
+.franchise_block1_image {
+    background-image: url(../image/franchise_block1_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 40%;
+    height: auto;
+    border-radius: 5px;
+}
+.content_franchise2 {
+    display: flex;
+    gap: 2em;
+}
+.franchise_block2_image {
+    background-image: url(../image/franchise_block2_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 30%;
+    height: auto;
+    border-radius: 5px;
+}
+.franchise_block2_text {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+
+/* TRAININGS AND LEARNING*/
+.main_block_trainings {
+    background-image: url(../image/trainings_main_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+}
+.trainings_topics_section {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    align-items: start;
+}
+.format_trainings_section {
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+}
+.format_training_content {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    padding: 1vw;
+    background-color: #EBEBEB;
+    border-radius: 5px;
+    width: 100%;
 }
