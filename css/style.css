@@ -46,6 +46,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2vw;
+    height: 100%;
 }
 
 /* HEADER */
@@ -259,7 +260,12 @@ li {
     text-align: center;
 }
 .wrapper_mainblock {
-    margin: 9em 8em;
+    margin: 1em 8em;
+    height: 100vh;
+    display: flex; /* Для центрування контенту */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Вертикальне вирівнювання */
 }
 h1 {
     font-family: 'Playfair_Display';
@@ -268,6 +274,8 @@ h1 {
     color: #FFFFFF;
     text-align: center;
     margin-top: 2em;
+    letter-spacing: 0.38px;
+    line-height: 1.1;
 }
 .goldh1_text {
     font-family: 'Playfair_Display';
@@ -542,7 +550,7 @@ h2 {
 }
 
 .aboutus_image {
-    width: 120%;
+    width: 100%;
     height: auto;
     background-image: url(../image/aboutus_image.png);
     background-size: cover;
@@ -592,14 +600,14 @@ h4 {
     color: #D2A042;
 }
 
-@media (max-width: 835px) {
+@media (max-width: 1075px) {
     .aboutus_content1 {
         display: flex;
         flex-direction: column;
     }
     .aboutus_image {
         width: 100%;
-        height: 40vw;
+        height: 50vw;
     }
 }
 @media (max-width: 480px) {
@@ -612,6 +620,10 @@ h4 {
     }
     .main_text_regular {
         font-size: 14px;
+    }
+    .success_icon {
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -687,6 +699,12 @@ h3 {
     .button_call_main {
         margin-left: 0;
         width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    svg {
+        width: 30px;
+        height: 30px;
     }
 }
 @media (max-width: 425px) {
@@ -801,6 +819,12 @@ h3 {
 @media (max-width: 640px) {
     .button_service_description {
         width: 100%;
+    }
+}
+@media (max-width: 640px) {
+    .service_icon {
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -1080,6 +1104,17 @@ h3 {
     height: 2px; 
 }
 
+@media (max-width: 480px) {
+    .gold_number {
+        font-family: 'Roboto';
+        font-weight: 700;
+        font-style: normal;
+        font-size: 48px;
+        color: transparent;
+        -webkit-text-stroke: 2px #C9A35B;
+        margin: 0;
+    }
+}
 
 /* CLIENTS AND PROJECTS*/
 
@@ -2282,7 +2317,7 @@ iframe {
     text-align: center;
 }
 .content_services_wrapper {
-    margin: 9em 8em;
+    margin: 1em 8em;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -2385,9 +2420,21 @@ iframe {
         display: none;
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 900px) {
+    .service_form_title h2 {
+        font-size: 28px;
+    }
+}
+@media (max-width: 600px) {
     .content_services_wrapper {
         margin: 2em 2em;
+    }
+    .services_main_list li {
+        list-style-type: circle;
+        font-size: 14px;
+    }
+    .service_form_title h2 {
+        font-size: 24px;
     }
 }
 
