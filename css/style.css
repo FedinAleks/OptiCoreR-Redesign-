@@ -475,7 +475,7 @@ h1 {
 
 @media (max-width: 950px) {
     .wrapper_mainblock {
-        margin: 7em 3em;
+        margin: 1em 3em;
     }
     h1, .goldh1_text {
         font-size: 48px;
@@ -2017,12 +2017,12 @@ footer {
     color: #242124;
 }
 .image1_education {
-    background-image: url(../image/education_image1.png);
+    background-image: url(../image/academy_h1_image.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 40%;
-    height: 150px;
+    width: 30%;
+    height: 10vw;
 }
 .education_part2 {
     display: flex;
@@ -2065,7 +2065,7 @@ footer {
     box-shadow: 0 2px 5px rgba(25, 24, 24, 0.5);
 }
 .background_image_education {
-    background-image: url(../image/education_background_image.png);
+    background-image: url(../image/academy_main_img.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
