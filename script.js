@@ -96,7 +96,7 @@ const fab2 = document.getElementById('fab2'); // Call
 
 //для іконки Telegram
 fab4.addEventListener('click', function() {
-    window.open('https://t.me/your_telegram_username', '_blank'); 
+    window.open('https://t.me/+qKb7r0-1XL45NmQ6', '_blank'); 
 });
 
 //для іконки Mail
@@ -106,7 +106,7 @@ fab3.addEventListener('click', function() {
 
 //для іконки Call
 fab2.addEventListener('click', function() {
-    window.location.href = 'tel:+1234567890'; 
+    window.location.href = 'tel:+380964355652'; 
 });
 
 
@@ -307,7 +307,7 @@ projectsContainer.addEventListener('touchend', () => {
 // buttons call
 document.querySelectorAll('.button_call, .button_call_main, .button_call_contact').forEach(function(button) {
     button.addEventListener('click', function() {
-        window.location.href = 'tel:+380123456789';
+        window.location.href = 'tel:+380964355652';
     });
 });
 
