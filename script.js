@@ -315,19 +315,21 @@ document.querySelectorAll('.button_call, .button_call_main, .button_call_contact
 document.querySelector('.button_moredetails').addEventListener('click', function() {
     const aboutUsBlock = document.querySelector('.aboutus_block');
     aboutUsBlock.scrollIntoView({ behavior: 'smooth' });
-});
+}); 
 
 
-// PRELOADER //
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const preloader = document.getElementById("preloader");
   
-    // Коли сторінка повністю завантажена
-    window.addEventListener("load", function () {
+    // Затримка на 2 секунди
+    setTimeout(function () {
       preloader.style.opacity = "0"; // Плавне зникнення
       setTimeout(() => {
-        preloader.style.display = "none"; // Видалення з DOM
-      }, 1000); // Час для завершення анімації (0.5 секунди)
-    });
+        preloader.style.display = "none"; // Видалення з DOM через 0.5 секунди
+      }, 500); // Час для завершення анімації (0.5 секунди)
+    }, 1000); // Затримка 2 секунди перед анімацією
   });
+  
