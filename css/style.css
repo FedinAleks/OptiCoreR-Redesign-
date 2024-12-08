@@ -1766,8 +1766,9 @@ footer {
     }
     
     .funds-success-message {
-      text-align: center;
-      margin-top: 2em;
+        text-align: center;       /* Основне вирівнювання */
+        text-align: -webkit-center; /* Специфічне для WebKit */
+        margin-top: 2em;
     }
     
     .funds-success-message h2 {
