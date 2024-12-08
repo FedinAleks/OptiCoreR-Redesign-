@@ -316,3 +316,18 @@ document.querySelector('.button_moredetails').addEventListener('click', function
     const aboutUsBlock = document.querySelector('.aboutus_block');
     aboutUsBlock.scrollIntoView({ behavior: 'smooth' });
 });
+
+
+// PRELOADER //
+
+document.addEventListener("DOMContentLoaded", function () {
+    const preloader = document.getElementById("preloader");
+  
+    // Коли сторінка повністю завантажена
+    window.addEventListener("load", function () {
+      preloader.style.opacity = "0"; // Плавне зникнення
+      setTimeout(() => {
+        preloader.style.display = "none"; // Видалення з DOM
+      }, 1000); // Час для завершення анімації (0.5 секунди)
+    });
+  });
