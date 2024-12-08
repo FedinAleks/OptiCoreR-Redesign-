@@ -330,6 +330,6 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         preloader.style.display = "none"; // Видалення з DOM через 0.5 секунди
       }, 500); // Час для завершення анімації (0.5 секунди)
-    }, 1000); // Затримка 2 секунди перед анімацією
+    }, 2000); // Затримка 2 секунди перед анімацією
   });
   
