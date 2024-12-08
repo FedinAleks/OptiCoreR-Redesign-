@@ -503,7 +503,7 @@ h1 {
 /* ABOUT US */
 
 .wrapper_aboutus {
-    margin: 5vw;
+    margin: 0vw 5vw;
     padding-top: 0.5vw;
 }
 
@@ -637,7 +637,7 @@ h4 {
 /* PROBLEMS SECTION */
 
 .wrapper_problems {
-    margin: 5vw;
+    margin: 0vw 5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -724,7 +724,7 @@ h3 {
 /* SERVICE */
 
 .wrapper_sevices {
-    margin: 5vw;
+    margin: 0vw 5vw;
     display: flex;
     flex-direction: column;
     gap: 2vw;
@@ -835,7 +835,7 @@ h3 {
 /* TEAM */
 
 .wrapper_team {
-    margin: 5vw;
+    margin: 0vw 5vw;
     display: flex;
     flex-direction: column;
     gap: 2vw;
@@ -1066,9 +1066,10 @@ h3 {
 /* HOW WE WORK */
 
 .wrapper_howwework {
-    margin: 5vw;
+    margin: 0vw 5vw;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2vw;
 }
 .container_steps {
@@ -1124,7 +1125,7 @@ h3 {
 
 
 .wrapper_clients {
-    margin: 5vw;
+    margin: 0vw 5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1230,7 +1231,7 @@ h3 {
 
 /* FAQ */
 .wrapper_faq {
-    margin: 5vw;
+    margin: 0vw 5vw;
 }
 
 /* CONTACT */
