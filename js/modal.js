@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
     const refs = {
       openModalBtn: document.querySelector("[data-modal-open]"),
       closeModalBtn: document.querySelector("[data-modal-close]"),
@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
       successMessage: document.getElementById('success-message'),
       nameError: document.getElementById('name-error'),
       telError: document.getElementById('tel-error'),
-      emailError: document.getElementById('email-error'),
+      emailError: document.getElementById('email-error'), // Додано
       policyError: document.getElementById('policy-error')
     };
   
     refs.openModalBtn.addEventListener("click", toggleModal);
     refs.closeModalBtn.addEventListener("click", toggleModal);
-    refs.form.addEventListener('submit', handleFormSubmit);
+    refs.form.addEventListener('submit', validateForm);
     refs.tel.addEventListener('input', formatPhoneNumber);
     refs.name.addEventListener('input', capitalizeName);
   
@@ -26,28 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle("modal-open");
       refs.modal.classList.toggle("is-hidden");
       
+      // Очистити поля форми при закритті модального вікна
       if (refs.modal.classList.contains("is-hidden")) {
         clearForm();
-      } else {
+      }
+      else {
+        // Встановити значення телефону на +380 при відкритті модального вікна
         refs.tel.value = '+380';
       }
     }
   
-    function handleFormSubmit(event) {
-      event.preventDefault(); // Зупиняємо стандартну відправку форми
-  
-      let isValid = validateForm();
-      if (isValid) {
-        grecaptcha.ready(() => {
-          grecaptcha.execute();
-        });
-      }
-    }
-  
-    function validateForm() {
+    function validateForm(event) {
       let isValid = true;
+  
+      // Очистити попередні повідомлення про помилки
       clearErrors();
   
+      // Перевірка полів
       if (!refs.name.value.trim()) {
         isValid = false;
         showFormError(refs.nameError, 'Ім’я є обов’язковим');
@@ -58,39 +53,46 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (refs.email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(refs.email.value)) {
         isValid = false;
-        showFormError(refs.emailError, 'Введіть дійсну електронну пошту');
+        showFormError(refs.emailError, 'Введіть дійсну електронну пошту'); // Змінено
       }
       if (!refs.agreement.checked) {
         isValid = false;
         showFormError(refs.policyError, 'Ви повинні погодитися на обробку персональних даних');
       }
   
-      return isValid;
-    }
+      if (!isValid) {
+        event.preventDefault(); // Зупиняємо стандартну відправку форми
+      } else {
+        event.preventDefault(); // Зупиняємо стандартну відправку форми
   
-    function onReCaptchaSuccess(token) {
-      // Відправка email
-      emailjs.send("service_kx9ukxb", "template_s9ijj5a", {
-        name: refs.name.value,
-        tel: refs.tel.value,
-        email: refs.email.value,
-        request: refs.request.value,
-        'g-recaptcha-response': token
-      })
-      .then(() => {
-        toggleModal();
-        refs.successMessage.classList.remove('is-hidden');
-        
-        setTimeout(() => {
-          refs.successMessage.classList.add('is-hidden');
-        }, 5000);
+        // Відправка email
+        emailjs.send("service_kx9ukxb", "template_s9ijj5a", {
+          name: refs.name.value,
+          tel: refs.tel.value,
+          email: refs.email.value,
+          request: refs.request.value
+        })
+        .then(() => {
+          // Закриття модального вікна
+          toggleModal();
   
-        clearForm();
-      })
-      .catch(error => {
-        console.error('Відправка email не вдалася:', error);
-        alert('Не вдалося відправити email. Спробуйте ще раз пізніше.');
-      });
+          // Показ повідомлення про успішне відправлення
+          refs.successMessage.classList.remove('is-hidden');
+          
+          // Сховати повідомлення через 5 секунд
+          setTimeout(() => {
+            refs.successMessage.classList.add('is-hidden');
+          }, 5000);
+  
+          // Очистити поля форми
+          clearForm();
+        })
+        .catch(error => {
+          // Обробка помилок, якщо відправка email не вдалася
+          console.error('Відправка email не вдалася:', error);
+          alert('Не вдалося відправити email. Спробуйте ще раз пізніше.');
+        });
+      }
     }
   
     function showFormError(element, message) {
@@ -109,8 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function clearForm() {
+      console.log("Clearing form"); 
       refs.form.reset();
-      refs.agreement.checked = false;
+      refs.agreement.checked = false; // Очистити стан чекбокса
+      // Додатково очищення значень інших полів
       refs.name.value = '';
       refs.tel.value = '';
       refs.email.value = '';
@@ -118,32 +122,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function formatPhoneNumber(event) {
-      let value = event.target.value.replace(/\D/g, '');
-  
+      let value = event.target.value.replace(/\D/g, ''); // Видалення всіх нецифрових символів
+    
+      // Видалення "38" при видаленні цифр
       if (value.length < 3) {
         value = '';
       } else if (!value.startsWith('380')) {
         value = '380' + value.slice(3);
       }
-  
+    
+      // Обмежити довжину до 12 цифр
       value = value.slice(0, 12);
-  
+    
+      // Форматування номера телефону з пробілами
       let formattedValue = '+380';
       if (value.length > 3) {
-        formattedValue += ' ' + value.slice(3, 5);
+        formattedValue += ' ' + value.slice(3, 5); // Додаємо перші 2 цифри після +380
       }
       if (value.length > 5) {
-        formattedValue += ' ' + value.slice(5, 8);
+        formattedValue += ' ' + value.slice(5, 8); // Додаємо наступні 3 цифри
       }
       if (value.length > 8) {
-        formattedValue += ' ' + value.slice(8, 10);
+        formattedValue += ' ' + value.slice(8, 10); // Додаємо наступні 2 цифри
       }
       if (value.length > 10) {
-        formattedValue += ' ' + value.slice(10, 12);
+        formattedValue += ' ' + value.slice(10, 12); // Додаємо останні 2 цифри
       }
-  
-      event.target.value = formattedValue.trim();
+    
+      event.target.value = formattedValue.trim(); // Оновлюємо значення поля
     }
+    
   
     function capitalizeName(event) {
       let value = event.target.value;
@@ -155,30 +163,5 @@ document.addEventListener('DOMContentLoaded', () => {
         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
         .join(' ');
     }
-  
-    function onReCaptchaSuccess(token) {
-      // Відправка email
-      emailjs.send("service_kx9ukxb", "template_s9ijj5a", {
-        name: refs.name.value,
-        tel: refs.tel.value,
-        email: refs.email.value,
-        request: refs.request.value,
-        'g-recaptcha-response': token
-      })
-      .then(() => {
-        toggleModal();
-        refs.successMessage.classList.remove('is-hidden');
-        
-        setTimeout(() => {
-          refs.successMessage.classList.add('is-hidden');
-        }, 5000);
-  
-        clearForm();
-      })
-      .catch(error => {
-        console.error('Відправка email не вдалася:', error);
-        alert('Не вдалося відправити email. Спробуйте ще раз пізніше.');
-      });
-    }
-  });
+  })();
   
