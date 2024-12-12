@@ -72,29 +72,42 @@ header {
     cursor: pointer;
 }
 
+/* Загальний стиль для меню */
 .nav_menu {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
-li {
+
+/* Стилі для пунктів меню */
+.nav_menu li {
     list-style: none;
     padding-right: 2em;
     position: relative;
 }
+
+/* Стилі для посилань у меню */
 .nav_menu a {
     text-decoration: none;
     text-transform: uppercase;
     color: #242124;
     font-size: 12px;
     font-weight: 700;
+    transition: color 0.3s ease;
 }
+
+/* Ефект при наведенні на посилання */
 .nav_menu a:hover {
     color: #C9A35B;
 }
+
+/* Стилі для підменю */
 .services_submenu {
-    display: none;
+    display: none; /* За замовчуванням підменю приховане */
     position: absolute;
-    top: 100%;
+    top: 100%; /* Розташування під головним пунктом меню */
     left: 0;
     list-style: none;
     padding: 1em;
@@ -102,23 +115,41 @@ li {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    z-index: 10; /* Забезпечує відображення підменю над іншими елементами */
 }
 
+/* Стилі для пунктів у підменю */
 .services_submenu li {
     width: 100%;
 }
 
+/* Стилі для посилань у підменю */
 .services_submenu li a {
     padding: 10px;
     display: block;
     text-decoration: none;
     color: #000;
     white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.services_dropdown:hover .services_submenu {
-    display: block;
+/* Ефект при наведенні на посилання у підменю */
+.services_submenu li a:hover {
+    background-color: #f5f5f5;
+    color: #C9A35B;
 }
+
+/* Відкриття підменю при додаванні класу .open */
+.services_dropdown .services_submenu {
+    display: none; /* Приховано за замовчуванням */
+}
+
+.services_dropdown.open .services_submenu {
+    display: block; /* Відображається, якщо є клас .open */
+}
+
+
+
 
 .services_submenu li a:hover {
     background-color: #f0f0f0;
@@ -152,7 +183,7 @@ li {
 .mobile_menu {
     display: none;
     position: fixed;
-    top: 0;
+    margin-left: 0;
     padding-left: 3vw;
     width: 100%;
     height: 100vh;
@@ -161,7 +192,6 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 20%;
 }
 
 .logo_mobile_header {
@@ -183,15 +213,16 @@ li {
 .mobile_menu ul {
     list-style: none;
     padding-left: 0px;
+    margin-top: 15%;
 }
 .mobile_menu ul li {
-    margin-bottom: 30px;
+    margin-bottom: 1em;
 }
 .mobile_menu ul li a {
     text-decoration: none;
     text-transform: uppercase;
     color: #242124;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 700;
     transition: color 0.3s;
 }
@@ -199,6 +230,59 @@ li {
     color: #C9A35B;
     border-bottom: 1px solid #C9A35B;
 }
+/* Ховаємо підменю за замовчуванням і встановлюємо максимальну висоту */
+.mobile_services_submenu {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 3em;
+    margin-left: 3em;
+    max-height: 0; /* Початкова висота підменю */
+    overflow: hidden; /* Ховаємо вміст, що не входить у підменю */
+    transition: max-height 0.5s ease-out; /* Плавний перехід для висоти */
+}
+ul .mobile_services_submenu {
+    margin-top: 0;
+}
+
+/* Стилі для відкритого підменю */
+.services_mobile_dropdown.open .mobile_services_submenu {
+    max-height: 500px; /* Встановлюємо максимальну висоту при відкритті підменю */
+    display: block; /* Відображаємо підменю */
+    margin-top: 2em;
+}
+
+/* Стилі для пунктів меню */
+.mobile_services_submenu li {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+/* Стилі для посилань в підменю */
+.mobile_services_submenu li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.mobile_services_submenu li a:hover {
+    color: #C9A35B;
+}
+
+/* Індикатор розгортання */
+.services_mobile_dropdown > a::after {
+    content: "▼";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.services_mobile_dropdown.open > a::after {
+    transform: rotate(180deg);
+}
+
 
 .button_request_mobile {
     padding: 1em 3em;
@@ -210,7 +294,7 @@ li {
     width: 90%;
     bottom: 30px;
     color: #212121;
-    margin-bottom: 10em;
+    margin-bottom: 3em;
 }
 .button_request_mobile:hover {
     background-color: #D2A042;

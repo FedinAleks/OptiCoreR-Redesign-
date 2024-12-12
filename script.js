@@ -10,10 +10,24 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// MOBILE MENU //
 
-function closeMobileMenu() {
+function closeMobileMenu(event) {
+    // Перевіряємо, чи клікнув користувач на пункт "Послуги"
+    const servicesDropdown = document.querySelector('.services_mobile_dropdown');
+    
+    if (servicesDropdown.contains(event.target)) {
+        // Якщо натиснуто на "Послуги", не закривати меню
+        return;
+    }
+
+    // Закриваємо меню для всіх інших елементів
     document.getElementById('mobileMenu').style.display = 'none';
 }
+document.getElementById('closeMenu').addEventListener('click', closeMobileMenu);
+document.querySelectorAll('.mobile_menu ul li a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
 
 
 function scrollToTop() {
@@ -24,13 +38,16 @@ function scrollToTop() {
 }
 
 document.getElementById('burgerMenu').addEventListener('click', function() {
-    document.getElementById('mobileMenu').style.display = 'flex';
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.display = 'flex';
+    mobileMenu.style.justifyContent = 'space-between'; // Додаємо стилі
 });
+
 
 document.getElementById('closeMenu').addEventListener('click', closeMobileMenu);
 
 const buttonRequestMobile = document.querySelector('.button_request_mobile');
-buttonRequestMobile.addEventListener('click', closeMobileMenu);
+    buttonRequestMobile.addEventListener('click', closeMobileMenu);
 
 const mobileMenuLinks = document.querySelectorAll('.mobile_menu ul li a');
 
@@ -39,18 +56,76 @@ mobileMenuLinks.forEach(link => {
 });
 
 const logoMobileHeader = document.querySelector('.logo_mobile_header');
-logoMobileHeader.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    closeMobileMenu(); 
-    scrollToTop(); 
+    logoMobileHeader.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        closeMobileMenu(); 
+        scrollToTop(); 
 });
 
-// logo main
+// logo main scrolltop //
 const logo = document.querySelector('.logo');
-logo.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    scrollToTop(); 
+    logo.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        scrollToTop(); 
 });
+
+// SERVICE SUB MENU //
+
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.querySelector('.services_dropdown');
+    const link = dropdown.querySelector('a');
+
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Зупиняємо перехід за посиланням
+        dropdown.classList.toggle('open'); // Тогл класу для відкриття/закриття меню
+    });
+
+    // Закриття меню, якщо клікнути поза ним
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+});
+
+// SERVICE MOBILE SUB MENU //
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mobileDropdown = document.querySelector('.services_mobile_dropdown');
+    const mobileLink = mobileDropdown.querySelector('a');
+    const mobileSubmenu = mobileDropdown.querySelector('.mobile_services_submenu');
+
+    // Відкривання/закривання підменю при кліку на "Послуги"
+    mobileLink.addEventListener('click', (e) => {
+        e.preventDefault(); // Забороняємо перехід за посиланням
+        mobileDropdown.classList.toggle('open'); // Додаємо/вилучаємо клас 'open'
+    });
+
+    // Закриття підменю при кліку поза ним
+    document.addEventListener('click', (e) => {
+        if (!mobileDropdown.contains(e.target)) {
+            mobileDropdown.classList.remove('open'); // Закриваємо підменю при натисканні поза ним
+        }
+    });
+
+    // Оновлений обробник для закриття мобільного меню
+    const mobileMenuLinks = document.querySelectorAll('.mobile_menu ul li a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Якщо це пункт "Послуги", не закривати меню
+            if (link.closest('.services_mobile_dropdown')) {
+                return; // Виходимо з обробника, щоб меню не закривалося
+            }
+            closeMobileMenu(); // Закриваємо меню для всіх інших посилань
+        });
+    });
+});
+
+
+
+
+
+
 
 
 
@@ -292,10 +367,10 @@ projectsContainer.addEventListener('touchend', () => {
     
     showSlide(currentSlide);
     
-    // Скидаємо значення після завершення свайпу
+
     startX = 0;
     endX = 0;
-    isSwiping = false;  // Завершення свайпу
+    isSwiping = false;
 });
 
 
@@ -320,6 +395,7 @@ document.querySelector('.button_moredetails').addEventListener('click', function
 
 
 
+// PRELOADER //
 
 document.addEventListener("DOMContentLoaded", function () {
     const preloader = document.getElementById("preloader");
@@ -331,5 +407,4 @@ document.addEventListener("DOMContentLoaded", function () {
         preloader.style.display = "none"; // Видалення з DOM через 0.5 секунди
       }, 500); // Час для завершення анімації (0.5 секунди)
     }, 2000); // Затримка 2 секунди перед анімацією
-  });
-  
+}); 
