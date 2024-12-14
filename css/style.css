@@ -2114,7 +2114,11 @@ footer {
 
 /* EDUCATION BLOCK */
 
-
+.main_block_education {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .education_part1 {
     display: flex;
     justify-content: space-between;
@@ -2137,10 +2141,10 @@ footer {
 }
 .education_part2 {
     display: flex;
-    justify-content: center;
-    align-items: center;
     justify-content: space-between;
-    margin: 0em 8em 0em 8em;
+    align-items: center;
+    gap: 2em;
+    margin: 4em 8em 0em 8em;
 }
 .education_part2 .social_media {
     margin-top: 0;
@@ -2162,7 +2166,6 @@ footer {
     font-weight: 600;
     cursor: pointer;
     margin-top: 1em;
-    margin-left: 40%;
 }
 .button_courses:hover {
     padding: 1em 3em;
@@ -2249,11 +2252,6 @@ footer {
     background-color: #D2A042;
 }
 
-@media screen and (min-width: 1750px) {
-    .education_part1 {
-        margin: 8em 8em 0em 8em;
-    }
-}
 @media (max-width: 1024px) {
     .course {
         flex: 1 1 calc(50% - 2em); /* 2 колонки на середніх екранах */
@@ -2267,7 +2265,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .education_part1 {
         margin: 4em 5em 0em 5em;
     }
@@ -2277,9 +2275,8 @@ footer {
     .education_part2 {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        justify-content: space-between;
+        margin: 1em 8em 0em 8em;
     }
     .course {
         flex: 1 1 100%; /* 1 колонка на маленьких екранах */
@@ -2293,16 +2290,10 @@ footer {
         text-align: center;
         width: 100%;
     }
-    .button_courses {
-        margin-left: 35%;
-    }
 }
 @media (max-width: 575px) {
     .courses_list {
         margin: 0em 2em 10em 2em;
-    }
-    .button_courses {
-        margin-left: 28%;
     }
     .background_image_education {
         height: 50vw;
@@ -2320,9 +2311,6 @@ footer {
         font-size: 12px;
         width: 80vw;
     }
-    .button_courses {
-        margin-left: 25%;
-    }
     .courses_list {
         margin: 0em 2em 10em 2em;
     }
@@ -2330,9 +2318,6 @@ footer {
 @media (max-width: 400px) {
     .education_subtitle {
         font-size: 12px;
-    }
-    .button_courses {
-        margin-left: 20%;
     }
     .courses_list {
         margin: 0em 2em 10em 2em;
