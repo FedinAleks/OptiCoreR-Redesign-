@@ -451,6 +451,10 @@ h1 {
 .social_media_icon:hover {
     transform: scale(1.1);
 }
+.social_media_link_telegram g {
+    transform: scale(0.7);
+    transform-origin: center;
+}
 
 
 /*QUICK CONTACT */
@@ -1028,8 +1032,14 @@ h3 {
 }
 
 .member_card_back p {
-    margin: 1vw 0;
+    margin: 0.5vw 0;
     text-align: center;
+    font-size: 14px;
+}
+.member_card_back .member_name {
+    border-bottom: 1px solid #EBEBEB;
+    color: #ffffff;
+    font-size: 18px;
 }
 .image_member1 {
     background-image: url(../image/Janna_Kudrytska.png);
@@ -2337,6 +2347,15 @@ footer {
     margin: 4em 8em 0em 8em;
     gap: 3em;
 }
+.podcast_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.post_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 .blog_title {
     font-family: 'Playfair_Display';
     font-weight: 500;
@@ -2348,12 +2367,26 @@ footer {
     flex-direction: column;
     gap: 1em;
 }
-.post, .podcast {
+.post {
     display: flex;
     flex-direction: column;
     background-color: #EBEBEB;
     padding: 1em 2em;
     border-radius: 5px;
+    gap: 0vw;
+}
+.podcast {
+    display: flex;
+    flex-direction: column;
+    background-color: #EBEBEB;
+    padding: 1em 2em;
+    border-radius: 5px;
+    gap: 0vw;
+}
+.post_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .podcasts_section {
     display: flex;
@@ -2363,13 +2396,17 @@ footer {
 
 iframe {
     width: 100%;
-    height: auto;
+    height: 250px;
 }
 @media (max-width: 1024px) {
     .main_section_blog {
         display: flex;
         flex-direction: column;
         margin: 4em 6em 0em 6em;
+    }
+    iframe {
+        width: 100%;
+        height: 300px;
     }
 }
 @media (max-width: 800px) {
@@ -2997,4 +3034,10 @@ iframe {
 #preloader img{
     width:150px;
     height:auto
+}
+
+body {
+    max-width: 1800px; /* Максимальна ширина сторінки */
+    margin: 0 auto; /* Центрування сторінки по горизонталі */
+    padding: 0 1em;
 }
