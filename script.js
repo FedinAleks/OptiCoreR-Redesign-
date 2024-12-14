@@ -79,6 +79,15 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault(); // Зупиняємо перехід за посиланням
         dropdown.classList.toggle('open'); // Тогл класу для відкриття/закриття меню
     });
+    // Відкривання меню при наведенні
+    dropdown.addEventListener('mouseenter', () => {
+        dropdown.classList.add('open'); // Додаємо клас 'open' при наведенні
+    });
+
+    // Закриття меню при відведенні курсора
+    dropdown.addEventListener('mouseleave', () => {
+        dropdown.classList.remove('open'); // Забираємо клас 'open' при відведенні
+    });
 
     // Закриття меню, якщо клікнути поза ним
     document.addEventListener('click', (e) => {
