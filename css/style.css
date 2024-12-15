@@ -2410,6 +2410,127 @@ iframe {
     }
 }
 
+
+/* POST STYLE*/
+.wrapper_post {
+    margin: 7em 5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: #EBEBEB;
+    border-radius: 5px;
+    padding: 1em 3em;
+}
+.section_post_image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3em;
+    border-bottom: 1px solid #C9A35B;
+    padding-bottom: 2em;
+}
+.image_main_post {
+    width: 500px;
+    height: 300px;
+    border-radius: 5px;
+    background-image: url(../image/post_image1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.post_main_info_text {
+    width: 100%;
+}
+.post_main_info_text h2 {
+    font-size: 32px;
+}
+.section_post_image2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3em;
+}
+.image_main_post2 {
+    background-image: url(../image/post_image2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    width: 300px;
+    height: 300px;
+}
+.section_post_image2_text {
+    width: 100%;
+}
+.image_main_post3 {
+    background-image: url(../image/post_image3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    width: 300px;
+    height: 300px;
+}
+
+@media (max-width: 1024px) {
+    .post_top {
+        display: flex;
+        flex-direction: column;
+    }
+    .post_main_info_text h2 {
+        font-size: 24px;
+    }
+    .section_post_image2 {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+@media (max-width: 850px) {
+    .wrapper_post {
+        margin: 5em 2em;
+    }
+}
+@media (max-width: 750px) {
+    .post_main_info_text h2 {
+        font-size: 24px;
+    }
+    .section_post_image2_text {
+        width: 100%;
+    }
+}
+@media (max-width: 680px) {
+    .wrapper_post {
+        margin: 5em 1em;
+    }
+    .section_post_image {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .image_main_post {
+        width: 300px;
+    }
+}
+@media (max-width: 420px) {
+    .wrapper_post {
+        margin: 3em 0em;
+        padding: 1em 1em;
+    }
+    .image_main_post, .image_main_post2, .image_main_post3 {
+        width: 250px;
+        height: 250px;
+    }
+    .post_main_info_text h2 {
+        font-size: 18px;
+    }
+}
+@media (max-width: 370px) {
+    .image_main_post, .image_main_post2, .image_main_post3 {
+        width: 220px;
+        height: 220px;
+    }
+}
+
 /* OFERTA / PRIVACY / TERM OF USE */
 .main_wrapper {
     margin: 5em 8em 5em 8em;
