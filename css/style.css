@@ -926,7 +926,9 @@ h3 {
 }
 
 /* TEAM */
-
+.team_block {
+    width: 100%;
+}
 .wrapper_team {
     margin: 0vw 5vw;
     display: flex;
@@ -1222,7 +1224,9 @@ h3 {
 
 /* CLIENTS AND PROJECTS*/
 
-
+.clients_block {
+    width: 100%;
+}
 .wrapper_clients {
     margin: 0vw 5vw;
     display: flex;
@@ -1414,6 +1418,7 @@ h3 {
 
 footer {
     background-color: #242124;
+    width: 100%;
 }
 .wrapper_footer {
     margin: 5vw;
@@ -2203,11 +2208,11 @@ footer {
     border-radius: 10px;
     padding: 1.5em;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(33.333% - 2em); /* 3 колонки */
+    flex: 1 1 calc(33.333% - 2em);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100%; /* Однакова висота */
+    min-height: 100%;
 }
 
 .course_bottom {
@@ -2329,7 +2334,7 @@ footer {
 
 .main_section_blog {
     display: flex;
-    margin: 4em 8em 0em 8em;
+    margin: 6em 8em 0em 8em;
     gap: 3em;
 }
 .podcast_wrapper {
@@ -2344,17 +2349,34 @@ footer {
 .blog_title {
     font-family: 'Playfair_Display';
     font-weight: 500;
-    font-size: 36px;
+    font-size: 1.5em;
     color: #242124;
 }
+.blog_main_text_regular {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.38px;
+    font-size: 12px;
+}
+.blog_course_title {
+    font-family: 'Playfair_Display';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-bottom: 1px solid #C9A35B;
+    padding-bottom: 1em;
+}
+
 .posts_section {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки з рівною шириною */
+    gap: 20px; /* Відступи між колонками та рядками */
 }
 .post {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     background-color: #EBEBEB;
     padding: 1em 2em;
     border-radius: 5px;
@@ -2372,6 +2394,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1em;
 }
 .podcasts_section {
     display: flex;
@@ -2392,6 +2415,13 @@ iframe {
     iframe {
         width: 100%;
         height: 300px;
+    }
+}
+@media (max-width: 850px) {
+    .posts_section {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* 2 колонки з рівною шириною */
+        gap: 20px; /* Відступи між колонками та рядками */
     }
 }
 @media (max-width: 800px) {
@@ -2416,12 +2446,13 @@ iframe {
     margin: 7em 5em;
     display: flex;
     flex-direction: column;
+    text-align: left;
     gap: 0;
     background-color: #EBEBEB;
     border-radius: 5px;
     padding: 1em 3em;
 }
-.section_post_image {
+.section_post_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -2444,11 +2475,15 @@ iframe {
 .post_main_info_text h2 {
     font-size: 32px;
 }
-.section_post_image2 {
+.post_content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    gap: 3em;
+    gap: 0.5em;
+}
+i {
+    color: #C9A35B;
+    font-weight: 400;
 }
 .image_main_post2 {
     background-image: url(../image/post_image2.png);
@@ -2503,7 +2538,7 @@ iframe {
     .wrapper_post {
         margin: 5em 1em;
     }
-    .section_post_image {
+    .section_post_header {
         display: flex;
         flex-direction: column-reverse;
     }
@@ -3142,8 +3177,15 @@ iframe {
     height:auto
 }
 
-body {
+body > *:not(footer, header) {
     max-width: 1800px; /* Максимальна ширина сторінки */
-    margin: 0 auto; /* Центрування сторінки по горизонталі */
-    padding: 0 1em;
+    margin: auto; /* Центрування сторінки по горизонталі */
+}
+@media screen and (min-width: 1800px) {
+    .courses_list, .main_section_blog { 
+        margin:  8em auto;
+    }
+    .education_part1 {
+        margin-top: 8em;
+    }
 }

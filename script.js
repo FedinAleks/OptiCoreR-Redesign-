@@ -1,3 +1,24 @@
+// PRELOADER //
+
+document.addEventListener("DOMContentLoaded", function () {
+    const preloader = document.getElementById("preloader");
+
+    // Перевірка ширини екрана
+    if (window.innerWidth > 1800) {
+        preloader.style.display = "none"; // Вимкнення прелоадера
+        return; // Вихід із функції
+    }
+
+    // Затримка на 2 секунди для менших екранів
+    setTimeout(function () {
+        preloader.style.opacity = "0"; // Плавне зникнення
+        setTimeout(() => {
+            preloader.style.display = "none"; // Видалення з DOM через 0.5 секунди
+        }, 500); // Час для завершення анімації (0.5 секунди)
+    }, 2000); // Затримка 2 секунди перед анімацією
+});
+
+
 // HEADER FIXED //
 
 
@@ -399,21 +420,4 @@ document.querySelectorAll('.button_call, .button_call_main, .button_call_contact
 document.querySelector('.button_moredetails').addEventListener('click', function() {
     const aboutUsBlock = document.querySelector('.aboutus_block');
     aboutUsBlock.scrollIntoView({ behavior: 'smooth' });
-}); 
-
-
-
-
-// PRELOADER //
-
-document.addEventListener("DOMContentLoaded", function () {
-    const preloader = document.getElementById("preloader");
-  
-    // Затримка на 2 секунди
-    setTimeout(function () {
-      preloader.style.opacity = "0"; // Плавне зникнення
-      setTimeout(() => {
-        preloader.style.display = "none"; // Видалення з DOM через 0.5 секунди
-      }, 500); // Час для завершення анімації (0.5 секунди)
-    }, 2000); // Затримка 2 секунди перед анімацією
 }); 
