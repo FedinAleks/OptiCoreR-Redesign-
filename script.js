@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Додаємо функціональність дзвінка
 document.querySelector('.button_call').addEventListener('click', () => {
-    window.location.href = 'tel:+1234567890'; // Замініть номер на потрібний
+    window.location.href = 'tel:+380964355652';
 });
 
 // Додаємо плавний перехід до блоку
