@@ -1252,8 +1252,8 @@ h3 {
 }
 
 .project {
-    min-width: 100%;
-    padding: 1vw;
+    min-width: 98%;
+    padding: 0.7em;
     background-color: #EBEBEB;
     border-radius: 5px;
 }
@@ -1299,6 +1299,9 @@ h3 {
 @media (max-width: 425px) {
     .project_name {
         font-size: 24px;
+    }
+    .project {
+        padding: 0.3em;
     }
 }
 
