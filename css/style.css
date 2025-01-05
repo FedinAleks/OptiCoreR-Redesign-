@@ -3173,8 +3173,9 @@ i {
 }
 @media screen and (min-width: 1800px) {
     body > *:not(footer, header) {
-        max-width: 1800px; /* Максимальна ширина сторінки */
-        margin: auto; /* Центрування сторінки по горизонталі */
+        max-width: 1800px;
+        margin: auto;
+        align-items: center;
     }
 }
 @media screen and (min-width: 1800px) {
