@@ -1335,6 +1335,45 @@ h3 {
     }
 }
 
+/* PARTNERS SECTION */
+
+.partners_block {
+    width: 100%;
+}
+.wrapper_partners {
+    margin: 0vw 5vw;
+}
+.partner_list {
+    display: flex;
+    justify-content: space-between;
+    gap: 2vw;
+}
+.partner_div {
+    background-color: #EBEBEB;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Додаємо плавний перехід */
+}
+
+.partner_div:hover {
+    transform: scale(1.05); /* Трохи збільшуємо елемент */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Додаємо тінь */
+}
+@media (max-width: 768px) {
+    .partner_list {
+        flex-direction: column;
+        align-items: center;
+        gap: 3vw;
+    }
+    .partner_div {
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+    }
+}
 
 /* FAQ */
 .wrapper_faq {
